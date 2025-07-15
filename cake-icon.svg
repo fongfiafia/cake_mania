@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="32" height="32" fill="white"/>
+    
+    <!-- 蛋糕底座 -->
+    <path d="M4 16C4 14.8954 4.89543 14 6 14H26C27.1046 14 28 14.8954 28 16V24C28 25.1046 27.1046 26 26 26H6C4.89543 26 4 25.1046 4 24V16Z" fill="#FF9EB5"/>
+    
+    <!-- 蛋糕中层 -->
+    <path d="M6 10C6 8.89543 6.89543 8 8 8H24C25.1046 8 26 8.89543 26 10V14H6V10Z" fill="#FFB6C1"/>
+    
+    <!-- 蛋糕顶层 -->
+    <path d="M10 4C10 2.89543 10.8954 2 12 2H20C21.1046 2 22 2.89543 22 4V8H10V4Z" fill="#FFD1DC"/>
+    
+    <!-- 装饰樱桃 -->
+    <circle cx="16" cy="2" r="2" fill="#FF4444"/>
+    
+    <!-- 奶油装饰 -->
+    <path d="M8 14C8 14 10 12 12 14C14 16 16 14 18 14C20 14 22 16 24 14" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+</svg> 
