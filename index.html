@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Mania - The Ultimate Time Management Baking Game Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Nunito:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .font-cookie {
+            font-family: 'Cookie', cursive;
+        }
+
+        .font-nunito {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 25%, #e17055 50%, #d63031 75%, #a29bfe 100%);
+        }
+
+        .cake-shadow {
+            box-shadow: 0 8px 32px rgba(250, 177, 160, 0.3);
+        }
+
+        .sweet-hover {
+            transition: all 0.3s ease;
+        }
+
+        .sweet-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(250, 177, 160, 0.4);
+        }
+
+        .bounce-slow {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .game-iframe {
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-divider {
+            background: linear-gradient(90deg, transparent, #fab1a0, transparent);
+            height: 2px;
+        }
+    </style>
+</head>
+
+<body class="font-nunito bg-gradient-to-br from-orange-50 to-pink-50 min-h-screen">
+    <!-- Header -->
+    <!-- <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b-2 border-orange-200">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="cake" class="w-8 h-8 text-orange-500"></i>
+                    <span class="font-cookie text-3xl text-orange-600">Cake Mania</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#play"
+                        class="flex items-center space-x-2 text-orange-600 hover:text-orange-800 transition-colors">
+                        <i data-lucide="play" class="w-4 h-4"></i>
+                        <span>Play Now</span>
+                    </a>
+                    <a href="#series"
+                        class="flex items-center space-x-2 text-orange-600 hover:text-orange-800 transition-colors">
+                        <i data-lucide="layers" class="w-4 h-4"></i>
+                        <span>Series</span>
+                    </a>
+                    <a href="#download"
+                        class="flex items-center space-x-2 text-orange-600 hover:text-orange-800 transition-colors">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        <span>Download</span>
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i data-lucide="menu" class="w-6 h-6 text-orange-600"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="#play" class="block py-2 text-orange-600">Play Now</a>
+                <a href="#series" class="block py-2 text-orange-600">Series</a>
+                <a href="#download" class="block py-2 text-orange-600">Download</a>
+            </div>
+        </nav>
+    </header> -->
+
+    <!-- Play Online Section -->
+    <section id="play" class="py-6 md:py-12 bg-gradient-to-r from-orange-100 to-pink-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="font-cookie text-3xl md:text-5xl text-orange-600 mb-4">Play Cake Mania Online</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 mb-8">Start your baking adventure right now - no downloads required!</p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white p-4 rounded-2xl cake-shadow">
+                    <iframe src="https://www.prima" class="w-full h-96 md:h-[600px] game-iframe" frameborder="0">
+                    </iframe>
+                    <!-- <iframe src="https://www.primarygames.com/puzzles/strategy/cakemania/mobile"
+                        class="w-full h-96 md:h-[600px] game-iframe" frameborder="0">
+                    </iframe> -->
+                </div>
+                <div class="text-center mt-8">
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm">
+                            <i data-lucide="check" class="w-4 h-4 inline mr-1"></i>
+                            Free to Play
+                        </span>
+                        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm">
+                            <i data-lucide="smartphone" class="w-4 h-4 inline mr-1"></i>
+                            Mobile Friendly
+                        </span>
+                        <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm">
+                            <i data-lucide="zap" class="w-4 h-4 inline mr-1"></i>
+                            Instant Play
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <!-- <section class="gradient-bg py-12 md:py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="float-animation mb-8">
+                <i data-lucide="chef-hat" class="w-20 h-20 mx-auto text-white mb-4"></i>
+            </div>
+            <h1 class="font-cookie text-4xl md:text-7xl text-white mb-4 drop-shadow-lg">
+                Cake Mania
+            </h1>
+            <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+                The Ultimate Time Management Baking Game Experience
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                    class="sweet-hover bg-white text-orange-600 px-8 py-3 rounded-full font-bold text-lg cake-shadow">
+                    <i data-lucide="play" class="w-5 h-5 inline mr-2"></i>
+                    Play Free Online
+                </button>
+                <button
+                    class="sweet-hover bg-orange-600 text-white px-8 py-3 rounded-full font-bold text-lg cake-shadow">
+                    <i data-lucide="download" class="w-5 h-5 inline mr-2"></i>
+                    Download Now
+                </button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Game Overview Section -->
+    <section id="overview" class="py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-cookie text-3xl md:text-5xl text-orange-600 mb-4">What is Cake Mania?</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <div class="sweet-hover bg-white p-6 rounded-2xl cake-shadow">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="clock" class="w-8 h-8 text-orange-500 mr-3"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Time Management</h3>
+                        </div>
+                        <p class="text-gray-600">Master the art of fast-paced baking as you serve customers quickly and
+                            efficiently in Jill's bakery.</p>
+                    </div>
+                    <div class="sweet-hover bg-white p-6 rounded-2xl cake-shadow">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="heart" class="w-8 h-8 text-pink-500 mr-3"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Heartwarming Story</h3>
+                        </div>
+                        <p class="text-gray-600">Follow Jill Evans' journey from inheriting her grandmother's bakery to
+                            building a cake empire.</p>
+                    </div>
+                    <div class="sweet-hover bg-white p-6 rounded-2xl cake-shadow">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="trending-up" class="w-8 h-8 text-green-500 mr-3"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Progressive Gameplay</h3>
+                        </div>
+                        <p class="text-gray-600">Upgrade equipment, unlock new recipes, and expand your bakery business
+                            across multiple locations.</p>
+                    </div>
+                </div>
+                <div class="order-first md:order-last">
+                    <div class="bg-gradient-to-br from-orange-200 to-pink-200 p-8 rounded-2xl cake-shadow">
+                        <div class="text-center">
+                            <i data-lucide="star" class="w-16 h-16 text-yellow-500 mx-auto mb-4 bounce-slow"></i>
+                            <h3 class="font-cookie text-2xl text-orange-600 mb-2">Classic Since 2006</h3>
+                            <p class="text-gray-700">Developed by Sandlot Games, Cake Mania became the pioneer of time
+                                management games, creating countless childhood memories for players worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Series Guide Section -->
+    <section id="series" class="py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-cookie text-3xl md:text-5xl text-orange-600 mb-4">Complete Cake Mania Series Guide</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="sweet-hover bg-white rounded-2xl cake-shadow overflow-hidden">
+                    <div class="bg-gradient-to-br from-orange-400 to-red-400 p-6 text-white">
+                        <i data-lucide="trophy" class="w-8 h-8 mb-3"></i>
+                        <h3 class="font-bold text-xl mb-2">Cake Mania Original</h3>
+                        <span class="text-sm opacity-90">Released 2006</span>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">The game that started it all! Help Jill save her grandmother's
+                            bakery with time management skills.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs">Classic</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Beginner
+                                Friendly</span>
+                        </div>
+                        <button
+                            class="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition-colors">
+                            <i data-lucide="play" class="w-4 h-4 inline mr-2"></i>
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sweet-hover bg-white rounded-2xl cake-shadow overflow-hidden">
+                    <div class="bg-gradient-to-br from-pink-400 to-purple-400 p-6 text-white">
+                        <i data-lucide="heart" class="w-8 h-8 mb-3"></i>
+                        <h3 class="font-bold text-xl mb-2">Cake Mania 2</h3>
+                        <span class="text-sm opacity-90">Jill's Next Adventure</span>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Expanded gameplay with new customers, recipes, and bakery
+                            equipment upgrades.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs">Enhanced</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">New Features</span>
+                        </div>
+                        <button
+                            class="w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition-colors">
+                            <i data-lucide="download" class="w-4 h-4 inline mr-2"></i>
+                            Download
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sweet-hover bg-white rounded-2xl cake-shadow overflow-hidden">
+                    <div class="bg-gradient-to-br from-yellow-400 to-orange-400 p-6 text-white">
+                        <i data-lucide="gift" class="w-8 h-8 mb-3"></i>
+                        <h3 class="font-bold text-xl mb-2">Cake Mania 3</h3>
+                        <span class="text-sm opacity-90">Wedding Season</span>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Help Jill prepare for her own wedding while managing multiple
+                            bakery locations.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">Wedding
+                                Theme</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Multiple
+                                Locations</span>
+                        </div>
+                        <button
+                            class="w-full bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4 inline mr-2"></i>
+                            Play Online
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-12 md:py-20 bg-gradient-to-r from-blue-100 to-purple-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-cookie text-3xl md:text-5xl text-orange-600 mb-4">Download Cake Mania Games</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="sweet-hover bg-white p-8 rounded-2xl cake-shadow text-center">
+                    <i data-lucide="monitor" class="w-16 h-16 text-blue-500 mx-auto mb-4"></i>
+                    <h3 class="font-bold text-xl mb-4">PC Download</h3>
+                    <p class="text-gray-600 mb-6">Get the full Cake Mania experience on your Windows PC with enhanced
+                        graphics and smooth gameplay.</p>
+                    <button class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                        <i data-lucide="download" class="w-4 h-4 inline mr-2"></i>
+                        Download for PC
+                    </button>
+                </div>
+                <div class="sweet-hover bg-white p-8 rounded-2xl cake-shadow text-center">
+                    <i data-lucide="smartphone" class="w-16 h-16 text-green-500 mx-auto mb-4"></i>
+                    <h3 class="font-bold text-xl mb-4">Mobile App</h3>
+                    <p class="text-gray-600 mb-6">Play Cake Mania on the go with our mobile app versions for Android and
+                        iOS devices.</p>
+                    <button class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors">
+                        <i data-lucide="smartphone" class="w-4 h-4 inline mr-2"></i>
+                        Get Mobile App
+                    </button>
+                </div>
+                <div class="sweet-hover bg-white p-8 rounded-2xl cake-shadow text-center">
+                    <i data-lucide="gamepad-2" class="w-16 h-16 text-purple-500 mx-auto mb-4"></i>
+                    <h3 class="font-bold text-xl mb-4">Nintendo DS</h3>
+                    <p class="text-gray-600 mb-6">Experience the portable version of Cake Mania designed specifically
+                        for Nintendo DS.</p>
+                    <button class="bg-purple-500 text-white px-6 py-3 rounded-lg hover:bg-purple-600 transition-colors">
+                        <i data-lucide="external-link" class="w-4 h-4 inline mr-2"></i>
+                        Find DS Version
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-cookie text-3xl md:text-5xl text-orange-600 mb-4">Tips & Strategies</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="sweet-hover bg-white p-6 rounded-2xl cake-shadow">
+                        <div class="flex items-start">
+                            <i data-lucide="zap" class="w-6 h-6 text-yellow-500 mr-3 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Speed is Key</h3>
+                                <p class="text-gray-600">Keep customers happy by serving them quickly. Upgrade your
+                                    equipment to increase baking speed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sweet-hover bg-white p-6 rounded-2xl cake-shadow">
+                        <div class="flex items-start">
+                            <i data-lucide="target" class="w-6 h-6 text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Prioritize Orders</h3>
+                                <p class="text-gray-600">Serve impatient customers first and batch similar orders
+                                    together for efficiency.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="sweet-hover bg-white p-6 rounded-2xl cake-shadow">
+                        <div class="flex items-start">
+                            <i data-lucide="coins" class="w-6 h-6 text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Smart Upgrades</h3>
+                                <p class="text-gray-600">Invest in equipment upgrades that will help you serve more
+                                    customers faster.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sweet-hover bg-white p-6 rounded-2xl cake-shadow">
+                        <div class="flex items-start">
+                            <i data-lucide="smile" class="w-6 h-6 text-blue-500 mr-3 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Customer Satisfaction</h3>
+                                <p class="text-gray-600">Happy customers leave bigger tips and help you reach your daily
+                                    goals faster.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="cake" class="w-8 h-8 text-orange-500"></i>
+                        <span class="font-cookie text-2xl">Cake Mania</span>
+                    </div>
+                    <p class="text-gray-400">The ultimate destination for time management baking games and Cake Mania
+                        series information.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#play" class="hover:text-white transition-colors">Play Online</a></li>
+                        <li><a href="#series" class="hover:text-white transition-colors">Game Series</a></li>
+                        <li><a href="#download" class="hover:text-white transition-colors">Downloads</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Games</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Cake Mania Original</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cake Mania 2</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cake Mania 3</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">System Requirements</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Cake Mania Fan Site. Game developed by Sandlot Games.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white/95');
+            } else {
+                header.classList.remove('bg-white/95');
+            }
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scroll animations
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Add click effects to buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function (e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                `;
+
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add ripple animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>
