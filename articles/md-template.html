@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} | Cake Mania Blog</title>
+    <meta name="description" content="{{description}}">
+    <meta name="keywords" content="{{keywords}}">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:image" content="{{image}}">
+    <meta property="og:url" content="{{url}}">
+
+    <link rel="canonical" href="{{url}}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Nunito:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet">
+    <style>
+        .font-cookie {
+            font-family: 'Cookie', cursive;
+        }
+
+        .font-nunito {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .cake-shadow {
+            box-shadow: 0 8px 32px rgba(250, 177, 160, 0.3);
+        }
+
+        .sweet-hover {
+            transition: all 0.3s ease;
+        }
+
+        .sweet-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(250, 177, 160, 0.4);
+        }
+
+        /* Markdown Styles */
+        .markdown-content h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+            color: #1a202c;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin: 1.75rem 0 1rem;
+            color: #2d3748;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: #4a5568;
+        }
+
+        .markdown-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+
+        .markdown-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .markdown-content ol {
+            list-style-type: decimal;
+            margin-left: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .markdown-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .markdown-content code {
+            background-color: #f7fafc;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+        }
+
+        .markdown-content pre {
+            margin-bottom: 1.25rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+
+        .markdown-content blockquote {
+            border-left: 4px solid #e2e8f0;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #718096;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+
+        .markdown-content a {
+            color: #ed8936;
+            text-decoration: underline;
+        }
+
+        .markdown-content a:hover {
+            color: #dd6b20;
+        }
+    </style>
+</head>
+
+<body class="font-nunito bg-gradient-to-br from-orange-50 to-pink-50 min-h-screen">
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <i data-lucide="cake" class="w-8 h-8 text-orange-500"></i>
+                    <span class="font-cookie text-2xl">Cake Mania</span>
+                </a>
+                <div class="flex items-center space-x-6">
+                    <a href="../index.html" class="text-orange-600 hover:text-orange-700">
+                        <i data-lucide="arrow-left" class="w-5 h-5 inline mr-1"></i>
+                        Back to Articles
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <article class="max-w-4xl mx-auto bg-white rounded-2xl cake-shadow p-8">
+            <header class="mb-8">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">{{title}}</h1>
+                <div class="flex items-center text-gray-600 mb-4">
+                    <div class="flex items-center mr-6">
+                        <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                        <time datetime="{{date}}">{{date}}</time>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-lucide="user" class="w-4 h-4 mr-2"></i>
+                        <span>Author: {{author}}</span>
+                    </div>
+                </div>
+                {{#if image}}
+                <img src="{{image}}" alt="{{imageAlt}}" class="w-full h-64 object-cover rounded-xl">
+                {{/if}}
+            </header>
+
+            <div class="markdown-content" id="content">
+                <!-- Markdown content will be rendered here -->
+            </div>
+
+            <footer class="mt-8 pt-8 border-t border-gray-200">
+                <div class="flex flex-wrap gap-2">
+                    {{#each tags}}
+                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">{{this}}</span>
+                    {{/each}}
+                </div>
+            </footer>
+        </article>
+
+        <!-- Related Articles -->
+        <div class="max-w-4xl mx-auto mt-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Related Articles</h2>
+            <div class="grid md:grid-cols-2 gap-6" id="related-articles">
+                <!-- Related articles will be dynamically loaded -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Function to load and render markdown content
+        async function loadMarkdownContent() {
+            try {
+                const response = await fetch('{{markdownUrl}}');
+                const markdown = await response.text();
+                const html = marked.parse(markdown);
+                document.getElementById('content').innerHTML = html;
+
+                // Initialize syntax highlighting
+                Prism.highlightAll();
+            } catch (error) {
+                console.error('Error loading markdown:', error);
+            }
+        }
+
+        // Load markdown content when page loads
+        window.addEventListener('DOMContentLoaded', loadMarkdownContent);
+    </script>
+</body>
+
+</html>

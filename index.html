@@ -105,8 +105,9 @@
             <div class="max-w-4xl mx-auto relative">
                 <div class="bg-white p-4 rounded-2xl cake-shadow">
                     <div class="relative iframe-wrapper">
-                        <iframe src="https://www.primarygames.com/puzzles/strategy/cakemania/mobile"
-                            class="w-full h-96 md:h-[600px] game-iframe" frameborder="0">
+                        <iframe id="game-iframe" src="https://www.primarygames.com/puzzles/strategy/cakemania/mobile"
+                            class="w-full h-96 md:h-[600px] game-iframe" frameborder="0"
+                            sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
                         </iframe>
                         <div id="game-loading-overlay"
                             class="hidden absolute inset-0 bg-gradient-to-r from-orange-500/90 to-pink-500/90 flex flex-col items-center justify-center z-10 rounded-xl">
@@ -146,19 +147,22 @@
     </section>
 
     <!-- Header with Main Title -->
-    <!-- <header class="gradient-bg py-12 md:py-16 text-center">
-        <div class="container mx-auto px-4">
-            <div class="float-animation mb-6">
-                <i data-lucide="cake" class="w-16 h-16 mx-auto text-white mb-3"></i>
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="flex items-center space-x-2">
+                    <i data-lucide="cake" class="w-8 h-8 text-orange-500"></i>
+                    <span class="font-cookie text-2xl">Cake Mania</span>
+                </a>
+                <div class="flex items-center space-x-6">
+                    <a href="./articles/index.html" class="text-orange-600 hover:text-orange-700 flex items-center">
+                        <i data-lucide="book-open" class="w-5 h-5 mr-1"></i>
+                        <span>Blog</span>
+                    </a>
+                </div>
             </div>
-            <h1 class="font-cookie text-4xl md:text-6xl text-white mb-4 drop-shadow-lg">
-                Cake Mania: The Ultimate Time Management Baking Game
-            </h1>
-            <p class="text-xl md:text-2xl text-white/90 mb-6 max-w-3xl mx-auto">
-                Serve customers, decorate cakes, and build your bakery empire!
-            </p>
-        </div>
-    </header> -->
+        </nav>
+    </header>
 
     <!-- Game Overview Section -->
     <section id="overview" class="py-12 md:py-20">
@@ -1267,9 +1271,34 @@
         `;
         document.head.appendChild(style);
 
+        // 添加iframe事件监听
+        window.addEventListener('message', function (event) {
+            // 确保消息来源安全
+            if (event.origin !== "https://www.primarygames.com") return;
 
-        // Game iframe loading notification functionality
+            // 处理来自iframe的消息
+            if (event.data.type === 'navigation') {
+                window.open(event.data.url, '_blank');
+            }
+        });
 
+        // 监听iframe点击
+        document.getElementById('game-iframe').addEventListener('load', function () {
+            try {
+                this.contentWindow.addEventListener('click', function (e) {
+                    // 如果是本地环境
+                    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                        e.preventDefault();
+                        const url = e.target.closest('a')?.href;
+                        if (url) {
+                            window.open(url, '_blank');
+                        }
+                    }
+                });
+            } catch (e) {
+                console.log('无法访问iframe内容，这是正常的跨域安全限制');
+            }
+        });
     </script>
 </body>
 
