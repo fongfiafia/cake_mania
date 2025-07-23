@@ -106,7 +106,9 @@
                 <div class="bg-white p-4 rounded-2xl cake-shadow">
                     <div class="relative iframe-wrapper">
                         <iframe src="https://www.primarygames.com/puzzles/strategy/cakemania/mobile"
-                            class="w-full h-96 md:h-[600px] game-iframe" frameborder="0">
+                            class="w-full h-96 md:h-[600px] game-iframe"
+                            sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation"
+                            allow="fullscreen" referrerpolicy="no-referrer" loading="lazy" frameborder="0">
                         </iframe>
                         <div id="game-loading-overlay"
                             class="hidden absolute inset-0 bg-gradient-to-r from-orange-500/90 to-pink-500/90 flex flex-col items-center justify-center z-10 rounded-xl">
