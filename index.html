@@ -100,6 +100,38 @@
             background: linear-gradient(90deg, transparent, #fab1a0, transparent);
             height: 2px;
         }
+
+        .game-container {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .game-container.hidden {
+            display: none;
+        }
+
+        .game-tab {
+            transition: all 0.3s ease;
+        }
+
+        .game-tab:hover {
+            transform: translateY(-2px);
+        }
+
+        .game-tab.active {
+            position: relative;
+        }
+
+        .game-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 2px;
+            background-color: #ea580c;
+            border-radius: 2px;
+        }
     </style>
 </head>
 
@@ -126,7 +158,7 @@
                     Download | CakeMania.org</h1>
                 <div class="section-divider w-24 mx-auto mb-8"></div>
                 <div class="space-y-4">
-                    <p class="text-lg">Ready to bake? Click to start your cake mania adventure! 🎂✨</p>
+                    <p class="text-lg">Choose your favorite Cake Mania game and start your baking adventure! 🎂✨</p>
                     <div class="flex flex-col md:flex-row items-center justify-center gap-4">
                         <div
                             class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg flex items-center space-x-3 max-w-md">
@@ -146,28 +178,80 @@
                 </div>
             </div>
 
-            <div class="max-w-4xl mx-auto relative">
-                <div class="bg-white p-4 rounded-2xl cake-shadow">
-                    <div class="relative iframe-wrapper">
-                        <iframe src="https://www.primarygames.com/puzzles/strategy/cakemania/mobile"
-                            class="w-full h-96 md:h-[600px] game-iframe"
-                            sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation"
-                            allow="fullscreen" referrerpolicy="no-referrer" loading="lazy" frameborder="0">
-                        </iframe>
-                        <div id="game-loading-overlay"
-                            class="hidden absolute inset-0 bg-gradient-to-r from-orange-500/90 to-pink-500/90 flex flex-col items-center justify-center z-10 rounded-xl">
-                            <div class="text-white text-center p-6">
-                                <i data-lucide="loader-2" class="w-16 h-16 mx-auto mb-4 animate-spin"></i>
-                                <h3 class="text-2xl font-bold mb-2">Game Loading...</h3>
-                                <p class="mb-4">Please wait while we prepare your Cake Mania experience!</p>
-                                <div class="w-64 h-2 bg-white/30 rounded-full overflow-hidden mx-auto">
-                                    <div id="loading-progress" class="h-full bg-white rounded-full" style="width: 0%">
-                                    </div>
-                                </div>
-                            </div>
+            <!-- Game Selection Tabs -->
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-cookie text-3xl md:text-4xl text-orange-600 mb-6 text-center">Cake Mania 1,2,3</h2>
+                <div class="bg-white rounded-t-2xl p-4 cake-shadow">
+                    <div class="flex flex-wrap gap-4 justify-center" role="tablist">
+                        <button
+                            class="game-tab active px-6 py-3 rounded-xl font-bold text-orange-600 bg-orange-100 hover:bg-orange-200 transition-colors flex items-center justify-center"
+                            data-game="cake-mania-1" role="tab">
+                            <i data-lucide="cake" class="w-5 h-5 mr-2"></i>
+                            <span>Cake Mania Online</span>
+                        </button>
+                        <button
+                            class="game-tab px-6 py-3 rounded-xl font-bold text-gray-600 hover:bg-orange-100 transition-colors flex items-center justify-center"
+                            data-game="cake-mania-2" role="tab">
+                            <i data-lucide="cake" class="w-5 h-5 mr-2"></i>
+                            <span>Cake Mania 2 Online</span>
+                        </button>
+                        <button
+                            class="game-tab px-6 py-3 rounded-xl font-bold text-gray-600 hover:bg-orange-100 transition-colors flex items-center justify-center"
+                            data-game="cake-mania-3" role="tab">
+                            <i data-lucide="cake" class="w-5 h-5 mr-2"></i>
+                            <span>Cake Mania 3 Online</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-b-2xl cake-shadow">
+                    <!-- Game Containers -->
+                    <div class="game-container active" id="cake-mania-1">
+                        <h3 class="sr-only">Cake Mania Online</h3>
+                        <div class="relative iframe-wrapper">
+                            <iframe src="https://www.primarygames.com/puzzles/strategy/cakemania/mobile"
+                                class="w-full h-96 md:h-[600px] game-iframe"
+                                sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation"
+                                allow="fullscreen" referrerpolicy="no-referrer" loading="lazy" frameborder="0">
+                            </iframe>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="text-gray-600">Play the original Cake Mania that started it all! Help Jill build
+                                her bakery empire.</p>
+                        </div>
+                    </div>
+
+                    <div class="game-container hidden" id="cake-mania-2">
+                        <h3 class="sr-only">Cake Mania 2 Online</h3>
+                        <div class="relative iframe-wrapper">
+                            <iframe
+                                src="https://www.retrogames.cc/embed/37530-cake-mania-2-jill-s-next-adventure-usa.html"
+                                class="w-full h-96 md:h-[600px] game-iframe"
+                                sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation"
+                                allow="fullscreen" referrerpolicy="no-referrer" loading="lazy" frameborder="0">
+                            </iframe>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="text-gray-600">Experience Cake Mania 2 with new locations, customers, and
+                                challenges!</p>
+                        </div>
+                    </div>
+
+                    <div class="game-container hidden" id="cake-mania-3">
+                        <h3 class="sr-only">Cake Mania 3 Online</h3>
+                        <div class="relative iframe-wrapper">
+                            <iframe src="https://www.retrogames.cc/embed/39510-cake-mania-3-usa.html"
+                                class=" w-full h-96 md:h-[600px] game-iframe"
+                                sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation"
+                                allow="fullscreen" referrerpolicy="no-referrer" loading="lazy" frameborder="0">
+                            </iframe>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="text-gray-600">Play Cake Mania 3 and travel through time to save your friends!</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="text-center mt-8">
                     <div class="flex flex-wrap justify-center gap-4">
                         <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm">
@@ -184,12 +268,56 @@
                         </span>
                     </div>
                 </div>
-                <div class="absolute bottom-2 right-2 text-gray-500 text-[10px]">
-                    provided by primarygames.com
-                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        // Add this to your existing script section
+        document.addEventListener('DOMContentLoaded', function () {
+            // Game tab switching functionality
+            const gameTabs = document.querySelectorAll('.game-tab');
+            const gameContainers = document.querySelectorAll('.game-container');
+            const footerGameLinks = document.querySelectorAll('a[data-game]');
+
+            // Function to switch game tabs
+            function switchGameTab(gameId) {
+                // Remove active class from all tabs and containers
+                gameTabs.forEach(t => t.classList.remove('active', 'bg-orange-100', 'text-orange-600'));
+                gameTabs.forEach(t => t.classList.add('text-gray-600'));
+                gameContainers.forEach(c => c.classList.add('hidden'));
+
+                // Add active class to clicked tab
+                const targetTab = document.querySelector(`.game-tab[data-game="${gameId}"]`);
+                targetTab.classList.add('active', 'bg-orange-100', 'text-orange-600');
+                targetTab.classList.remove('text-gray-600');
+
+                // Show corresponding container
+                const container = document.getElementById(gameId);
+                container.classList.remove('hidden');
+            }
+
+            // Add click handlers for tabs
+            gameTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const gameId = tab.getAttribute('data-game');
+                    switchGameTab(gameId);
+                });
+            });
+
+            // Add click handlers for footer links
+            footerGameLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const gameId = link.getAttribute('data-game');
+                    if (gameId) {
+                        e.preventDefault();
+                        document.querySelector('#play').scrollIntoView({ behavior: 'smooth' });
+                        setTimeout(() => switchGameTab(gameId), 500);
+                    }
+                });
+            });
+        });
+    </script>
 
     <!-- Header with Main Title -->
     <!-- <header class="gradient-bg py-12 md:py-16 text-center">
@@ -731,7 +859,7 @@
                 </a>
             </div>
         </div>
-    </section>s
+    </section>
 
 
     <!-- Gameplay Mechanics Section -->
@@ -1114,6 +1242,27 @@
                     <h4 class="font-bold mb-4 text-xl">Game Content</h4>
                     <ul class="space-y-2 text-gray-400">
                         <li>
+                            <a href="#play" class="hover:text-white transition-colors inline-flex items-center"
+                                data-game="cake-mania-1">
+                                <i data-lucide="gamepad-2" class="w-4 h-4 mr-2"></i>
+                                <span>Cake Mania Online</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#play" class="hover:text-white transition-colors inline-flex items-center"
+                                data-game="cake-mania-2">
+                                <i data-lucide="gamepad-2" class="w-4 h-4 mr-2"></i>
+                                <span>Cake Mania 2 Online</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#play" class="hover:text-white transition-colors inline-flex items-center"
+                                data-game="cake-mania-3">
+                                <i data-lucide="gamepad-2" class="w-4 h-4 mr-2"></i>
+                                <span>Cake Mania 3 Online</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="#overview" class="hover:text-white transition-colors inline-flex items-center">
                                 <i data-lucide="info" class="w-4 h-4 mr-2"></i>
                                 <span>Game Overview</span>
@@ -1318,5 +1467,7 @@
 
     </script>
 </body>
+
+</html>
 
 </html>
