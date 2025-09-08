@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Play Goat Escape Online for free! Guide the goat to the exit, avoid traps, and solve mini platform puzzles. Learn how to play, tips and FAQs. No download required.">
+    <title>Play Goat Escape Online (Free | No Download)</title>
+    <link rel="canonical" href="https://www.cakemania.org/goatescapeonline" />
+
+    <!-- Keywords Meta Tag -->
+    <meta name="keywords"
+        content="goat escape online, play goat escape, goat escape game, goat online game, browser platform game, free puzzle platformer, goat escape how to play, goat escape faq, html5 game">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cakemania.org/goatescapeonline">
+    <meta property="og:title" content="Play Goat Escape Online - Free Browser Game">
+    <meta property="og:description"
+        content="Play Goat Escape Online in your browser. Jump, dodge, and escape the maze of obstacles. No download required.">
+    <meta property="og:site_name" content="CakeMania.org">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.cakemania.org/goatescapeonline">
+    <meta name="twitter:title" content="Play Goat Escape Online - Free Browser Game">
+    <meta name="twitter:description"
+        content="Guide the goat to freedom in bite-sized platform levels. Learn how to play and get quick tips.">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="cakemania.org">
+    <meta name="language" content="English">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../cake-icon.svg">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Nunito:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .font-cookie { font-family: 'Cookie', cursive; }
+        .font-nunito { font-family: 'Nunito', sans-serif; }
+        .cake-shadow { box-shadow: 0 8px 32px rgba(250, 177, 160, 0.3); }
+        .sweet-hover { transition: all 0.3s ease; }
+        .sweet-hover:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(250, 177, 160, 0.4); }
+        .game-iframe { border-radius: 20px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
+        .section-divider { background: linear-gradient(90deg, transparent, #fab1a0, transparent); height: 2px; }
+    </style>
+</head>
+
+<body class="font-nunito bg-gradient-to-br from-orange-50 to-pink-50 min-h-screen">
+    <!-- Google Analytics -->
+    <div style="display: none;">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-57HVEKRDC0"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-57HVEKRDC0');
+        </script>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../" class="flex items-center space-x-2">
+                    <i data-lucide="cake" class="w-8 h-8 text-orange-500"></i>
+                    <span class="font-cookie text-2xl text-orange-600">Cake Mania</span>
+                </a>
+                <div class="flex space-x-4">
+                    <a href="../" class="text-gray-600 hover:text-orange-500 transition-colors">Home</a>
+                    <a href="../#overview" class="text-gray-600 hover:text-orange-500 transition-colors">Overview</a>
+                    <a href="../#gameplay" class="text-gray-600 hover:text-orange-500 transition-colors">Gameplay</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Game Section -->
+    <section class="py-12 md:py-20 bg-gradient-to-r from-orange-100 to-pink-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="font-cookie text-4xl md:text-6xl text-orange-600 mb-4">Play Goat Escape Online</h1>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-700 max-w-2xl mx-auto">Help the goat find the exit! Jump, dodge traps, and
+                    outsmart obstacles across quick, bite-sized levels—directly in your browser.</p>
+            </div>
+
+            <!-- Game Container -->
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-2xl cake-shadow">
+                    <!-- Loading Notice -->
+                    <div class="mb-6 flex flex-col md:flex-row items-center justify-center gap-4">
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg flex items-center space-x-3">
+                            <i data-lucide="clock" class="w-6 h-6 text-yellow-500"></i>
+                            <p class="text-yellow-700">
+                                <span class="font-bold">Please wait 1 minute</span> for the game to load.
+                            </p>
+                        </div>
+                        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg flex items-center space-x-3">
+                            <i data-lucide="chrome" class="w-6 h-6 text-blue-500"></i>
+                            <p class="text-blue-700">
+                                <span class="font-bold">Best experienced</span> with Google Chrome browser.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Game Frame -->
+                    <div class="relative">
+                        <iframe src="https://html5.gamemonetize.co/eiqyr701sjhtykqcvc9u78xuhqznnek2/"
+                            title="Goat Escape Online Game"
+                            class="w-full h-[600px] game-iframe"
+                            sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation"
+                            allow="fullscreen" referrerpolicy="no-referrer" loading="lazy" frameborder="0">
+                        </iframe>
+                    </div>
+
+                    <!-- Game Features -->
+                    <div class="mt-8">
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm">
+                                <i data-lucide="check" class="w-4 h-4 inline mr-1"></i>
+                                Free to Play
+                            </span>
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm">
+                                <i data-lucide="smartphone" class="w-4 h-4 inline mr-1"></i>
+                                Mobile Friendly
+                            </span>
+                            <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm">
+                                <i data-lucide="zap" class="w-4 h-4 inline mr-1"></i>
+                                No Download Required
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Goat Escape -->
+    <section class="py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-6">
+                    <h2 class="font-cookie text-3xl md:text-5xl text-orange-600 mb-6">What is Goat Escape?</h2>
+                    <div class="bg-white p-6 rounded-2xl cake-shadow">
+                        <p class="text-gray-700">Goat Escape Online is a quick, casual platformer where you guide a
+                            nimble goat through small obstacle-filled stages to reach the exit. Expect jump timing,
+                            moving hazards, and simple but satisfying escape-room style layouts—all playable in your
+                            browser.</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-gray-800">Core Features</h3>
+                    <div class="bg-white p-6 rounded-2xl cake-shadow">
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Short, bite-sized platform levels</li>
+                            <li>Simple keyboard or touch controls</li>
+                            <li>Instant retries to master tricky sections</li>
+                            <li>Light puzzle elements and timing challenges</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Goat Escape Online -->
+    <section id="how-to" class="py-12 md:py-20 bg-gradient-to-r from-yellow-50 to-orange-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="font-cookie text-3xl md:text-5xl text-orange-600 mb-4">How to Play Goat Escape Online</h2>
+                <div class="section-divider w-24 mx-auto mb-6"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl cake-shadow">
+                    <div class="flex items-start mb-3">
+                        <i data-lucide="keyboard" class="w-6 h-6 text-orange-500 mr-3"></i>
+                        <h3 class="text-lg font-bold text-gray-800">Controls</h3>
+                    </div>
+                    <p class="text-gray-700">Use WASD or Arrow keys to move and jump. On touch devices, use on-screen
+                        controls or swipe/virtual buttons when available.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl cake-shadow">
+                    <div class="flex items-start mb-3">
+                        <i data-lucide="target" class="w-6 h-6 text-pink-500 mr-3"></i>
+                        <h3 class="text-lg font-bold text-gray-800">Objective</h3>
+                    </div>
+                    <p class="text-gray-700">Reach the exit while avoiding spikes, moving platforms, and other hazards.
+                        Timing and patience are key to success.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl cake-shadow">
+                    <div class="flex items-start mb-3">
+                        <i data-lucide="lightbulb" class="w-6 h-6 text-green-500 mr-3"></i>
+                        <h3 class="text-lg font-bold text-gray-800">Tips</h3>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Observe level patterns before rushing in.</li>
+                        <li>Short hops give finer control than full jumps.</li>
+                        <li>Fail fast and retry—levels are designed for quick mastery.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="font-cookie text-3xl md:text-5xl text-orange-600 mb-4">Goat Escape Online: FAQ</h2>
+                <div class="section-divider w-24 mx-auto mb-6"></div>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white p-6 rounded-2xl cake-shadow">
+                    <h3 class="text-lg font-bold text-gray-800">Is Goat Escape Online free?</h3>
+                    <p class="text-gray-700">Yes. You can play directly in your browser for free. Some embeds may show
+                        ads to support hosting.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl cake-shadow">
+                    <h3 class="text-lg font-bold text-gray-800">Do I need to download anything?</h3>
+                    <p class="text-gray-700">No, it runs in the browser. Just click play and wait for the game to
+                        load.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl cake-shadow">
+                    <h3 class="text-lg font-bold text-gray-800">Can I play on mobile?</h3>
+                    <p class="text-gray-700">Most HTML5 versions are mobile-friendly. For best performance, use the
+                        latest Chrome or Safari on a modern device.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl cake-shadow">
+                    <h3 class="text-lg font-bold text-gray-800">Is this the original Goat Escape?</h3>
+                    <p class="text-gray-700">This is a browser-playable HTML5 version. Names and content belong to
+                        their respective owners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="cake" class="w-8 h-8 text-orange-500"></i>
+                        <span class="font-cookie text-2xl">Cake Mania</span>
+                    </div>
+                    <p class="text-gray-400">Quick, fun platform challenge—help the goat escape right in your
+                        browser.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-xl">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="../#overview" class="hover:text-white transition-colors">Game Overview</a></li>
+                        <li><a href="../#gameplay" class="hover:text-white transition-colors">Gameplay Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-xl">More Games</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../" class="hover:text-white transition-colors">Cake Mania</a></li>
+                        <li><a href="../cakemania2online/" class="hover:text-white transition-colors">Cake Mania 2</a></li>
+                        <li><a href="../cakemania3online/" class="hover:text-white transition-colors">Cake Mania 3</a></li>
+                        <li><a href="../cookingmamaonline/" class="hover:text-white transition-colors">Cooking Mama Online</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-500">&copy; 2025 Cake Mania Fan Site. All trademarks are property of their respective owners.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
