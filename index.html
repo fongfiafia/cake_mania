@@ -151,6 +151,25 @@
 
     </div>
 
+        <!-- Navigation -->
+    <nav class="bg-white shadow-md bg-gradient-to-r from-orange-110 to-pink-180">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../" class="flex items-center space-x-2">
+                    <i data-lucide="cake" class="w-8 h-8 text-orange-500"></i>
+                    <span class="font-cookie text-2xl text-orange-600">Cake Mania</span>
+                </a>
+                <div class="flex space-x-4">
+                    <a href="/cakemania2online" class="text-gray-600 hover:text-orange-500 transition-colors">Cake mania 2</a>
+                    <a href="/cakemania3online" class="text-gray-600 hover:text-orange-500 transition-colors">Cake mania 3</a>
+                    <a href="../#hotoplay" class=   "text-gray-600 hover:text-orange-500 transition-colors">How to Play</a>
+                    <a href="../#gameplay" class=   "text-gray-600 hover:text-orange-500 transition-colors">Gameplay</a>
+                    <a href="../#faq" class="text-gray-600 hover:text-orange-500 transition-colors">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
 
     <!-- Play Online Section -->
     <section id="play" class="py-6 md:py-12 bg-gradient-to-r from-orange-100 to-pink-100">
@@ -393,20 +412,73 @@
         });
     </script>
 
-    <!-- Header with Main Title -->
-    <!-- <header class="gradient-bg py-12 md:py-16 text-center">
+    <!-- How to Play Cake Mania Section -->
+    <section id="hotoplay" class="py-16 bg-gradient-to-r from-pink-50 to-orange-50">
         <div class="container mx-auto px-4">
-            <div class="float-animation mb-6">
-                <i data-lucide="cake" class="w-16 h-16 mx-auto text-white mb-3"></i>
+            <div class="text-center mb-10">
+                <i data-lucide="book-open" class="w-12 h-12 text-orange-500 mx-auto mb-4"></i>
+                <h2 class="font-cookie text-3xl md:text-5xl text-orange-600 mb-4">How to Play Cake Mania</h2>
+                <p class="text-gray-700 max-w-2xl mx-auto">Learn the core flow of Cake Mania: take orders, bake cakes, decorate precisely, and deliver quickly to keep customers happy and grow your bakery.</p>
             </div>
-            <h1 class="font-cookie text-4xl md:text-6xl text-white mb-4 drop-shadow-lg">
-                Cake Mania: The Ultimate Time Management Baking Game
-            </h1>
-            <p class="text-xl md:text-2xl text-white/90 mb-6 max-w-3xl mx-auto">
-                Serve customers, decorate cakes, and build your bakery empire!
-            </p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="sweet-hover bg-white p-6 rounded-2xl cake-shadow">
+                    <div class="flex items-start mb-3">
+                        <i data-lucide="target" class="w-6 h-6 text-pink-500 mr-2"></i>
+                        <h3 class="font-bold text-lg">Goal</h3>
+                    </div>
+                    <p class="text-gray-600">Meet the daily revenue target by serving Cake Mania customers fast and accurately. Higher satisfaction yields better tips and star ratings.</p>
+                </div>
+
+                <div class="sweet-hover bg-white p-6 rounded-2xl cake-shadow">
+                    <div class="flex items-start mb-3">
+                        <i data-lucide="mouse-pointer" class="w-6 h-6 text-blue-500 mr-2"></i>
+                        <h3 class="font-bold text-lg">Controls</h3>
+                    </div>
+                    <p class="text-gray-600">Click to select stations and ingredients. Drag or click to assemble layers and decorations. Use upgrades to speed up baking and decoration in Cake Mania levels.</p>
+                </div>
+
+                <div class="sweet-hover bg-white p-6 rounded-2xl cake-shadow">
+                    <div class="flex items-start mb-3">
+                        <i data-lucide="users" class="w-6 h-6 text-green-500 mr-2"></i>
+                        <h3 class="font-bold text-lg">Customers</h3>
+                    </div>
+                    <p class="text-gray-600">Each customer has a patience bar. Prioritize quick orders and use combos to keep the queue flowing in Cake Mania.</p>
+                </div>
+            </div>
+
+            <div class="mt-10 grid md:grid-cols-2 gap-6">
+                <div class="sweet-hover bg-white p-6 rounded-2xl cake-shadow">
+                    <h3 class="font-bold text-lg mb-3">Order Flow</h3>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                        <li>Read the Cake Mania order: shape, flavor, icing, and decoration.</li>
+                        <li>Bake layers in the oven; queue multiple cakes to optimize time.</li>
+                        <li>Apply icing and decorations exactly as requested.</li>
+                        <li>Deliver the finished cake to the correct customer.</li>
+                        <li>Collect payment and tips; keep baking to reach the target.</li>
+                    </ol>
+                </div>
+                <div class="sweet-hover bg-white p-6 rounded-2xl cake-shadow">
+                    <h3 class="font-bold text-lg mb-3">Upgrades & Strategy</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Upgrade ovens and decoration stations to reduce wait times in Cake Mania.</li>
+                        <li>Place display items to boost patience for demanding customers.</li>
+                        <li>Batch similar cakes to create time-saving rhythms.</li>
+                        <li>Avoid mistakes—misdecorated cakes waste time and reduce tips.</li>
+                        <li>Use pause moments to plan the next few orders.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-10 sweet-hover bg-white p-6 rounded-2xl cake-shadow">
+                <div class="flex items-start mb-3">
+                    <i data-lucide="star" class="w-6 h-6 text-yellow-500 mr-2"></i>
+                    <h3 class="font-bold text-lg">Pro Tips</h3>
+                </div>
+                <p class="text-gray-700">Aim for consistent combos, keep ovens busy, and memorize common Cake Mania recipes. Small optimizations per order compound into big savings over a full day.</p>
+            </div>
         </div>
-    </header> -->
+    </section>
 
     <!-- Game Overview Section -->
     <section id="overview" class="py-12 md:py-20">
