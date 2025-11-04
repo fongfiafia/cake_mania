@@ -29,3 +29,6 @@ Moon Sign Calculator, Moon Sign, Astrology, Birth Chart, Astrological Insights
 
 # x
 https://x.com/fiafia85217
+
+
+python3 -m http.server 8080 
